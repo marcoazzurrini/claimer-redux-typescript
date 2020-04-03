@@ -11,6 +11,7 @@ import Button from "./Button";
 import { connect } from "react-redux";
 import { chevronStyles } from "../Styles/images";
 import ChevronImage from "../Assets/chevron.png";
+import { IpropsApp } from "../types";
 import {
   submitAnswer,
   getNextQuestion,
@@ -20,31 +21,6 @@ import {
 } from "../Redux/actions";
 import getNextId from "../Utils/getNextQuestion";
 import ErrorBoundary from "./ErrorBoundary";
-interface answer {
-  answer: string;
-  id: string;
-  tag: string;
-}
-interface Iquestion {
-  id: string;
-  question: string;
-  tag: string;
-  answers: [answer, answer, answer, answer, answer];
-  type: string;
-}
-
-interface IpropsApp {
-  questions: [];
-  dispatchSubmitAnswer: Function;
-  dispatchAddCompletedQuestion: Function;
-  dispatchGetNextQuestion: Function;
-  dispatchGetPreviousQuestion: Function;
-  dispatchToggleQuizStatus: Function;
-  quizStatus: boolean;
-  answers: [answer, answer, answer, answer, answer];
-  currentQuestion: any;
-  completedQuestions: [];
-}
 
 function App({
   questions,
@@ -70,7 +46,6 @@ function App({
 
   const setPreviosQuizInstance = () => {
     if (completedQuestions.length > 0) {
-      console.log(currentQuestion.id);
       dispatchGetPreviousQuestion(currentQuestion.id);
     }
   };

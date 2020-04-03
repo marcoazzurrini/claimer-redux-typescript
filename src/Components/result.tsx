@@ -2,16 +2,9 @@
 import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
 import { bodyLarge, headingPrimary } from "../Styles/text";
-interface answer {
-  answer: string;
-  id: string;
-  tag: string;
-}
-interface props {
-  answers: [answer, answer, answer, answer, answer];
-}
+import { IresultProps } from "../types";
 
-export default function Result({ answers }: props) {
+export default function Result({ answers }: IresultProps) {
   const { 0: name, 1: email, 2: favSport, 3: fav, 4: signup } = answers;
   return (
     <div>

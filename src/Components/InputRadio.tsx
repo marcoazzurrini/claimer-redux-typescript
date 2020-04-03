@@ -3,7 +3,6 @@ import { jsx } from "@emotion/core";
 import { headingSecondary, headingPrimary } from "../Styles/text";
 import { InputRadioList } from "../Styles/inputs";
 import PropTypes from "prop-types";
-
 interface Iquestion {
   id: string;
   question: string;

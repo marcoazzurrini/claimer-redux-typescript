@@ -6,25 +6,13 @@ import useFormValidation from "../Hooks/useFormValidation";
 import PropTypes from "prop-types";
 import Button from "./Button";
 import { BtnMedium, messageStyles } from "../Styles/buttons";
-
-interface Iquestion {
-  id: string;
-  question: string;
-  tag: string;
-  answers: [];
-  type: string;
-}
-interface props {
-  handleFormSubmit: Function;
-  render: any;
-  currentQuestion: Iquestion;
-}
+import { IformProps } from "../types";
 
 export default function Form({
   handleFormSubmit,
   render,
   currentQuestion
-}: props) {
+}: IformProps) {
   const [inputVal, setInputVal] = useState<string>("");
   const [error, setError] = useState(false);
 

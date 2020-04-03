@@ -4,23 +4,9 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { TextInput } from "../Styles/inputs";
 import { headingPrimary } from "../Styles/text";
+import { IinputProps } from "../types";
 
-interface Iquestion {
-  id: string;
-  question: string;
-  tag: string;
-  answers: [];
-  type: string;
-}
-interface props {
-  props: {
-    inputVal: string;
-    handleChange: Function;
-    currentQuestion: Iquestion;
-  };
-}
-
-export default function Input({ props }: props) {
+export default function Input({ props }: IinputProps) {
   const inputRef = React.createRef<HTMLInputElement>();
   useEffect(() => {
     const node = inputRef.current;

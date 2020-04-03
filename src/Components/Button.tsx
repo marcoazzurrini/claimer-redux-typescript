@@ -1,19 +1,14 @@
 /**@jsx jsx */
-import { jsx, SerializedStyles } from "@emotion/core";
-interface props {
-  type: "button" | "submit" | "reset" | undefined;
-  style: SerializedStyles | undefined;
-  render: any | null;
-  onClick: () => void;
-  children: string | undefined;
-}
+import { jsx } from "@emotion/core";
+import { IbuttonProps } from "../types";
+
 export default function Button({
   type,
   children,
   onClick,
   style,
   render
-}: props) {
+}: IbuttonProps) {
   return (
     <button onClick={onClick} css={style} type={type}>
       {render ? render : children}
